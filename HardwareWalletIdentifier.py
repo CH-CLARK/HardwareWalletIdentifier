@@ -6,16 +6,38 @@ def main():
     
     connected_devices = []
 
-    print("Previously connected devices:")
+    print('Previously connected devices:')
     print("----------------------------------------")
     for n in range(1000):
         try:
             x = winreg.EnumKey(access_key,n)
             print(x)
+            connected_devices.append(x)
             
         except:
             break
     print("----------------------------------------")
+    print('The following Hardware Wallet may have been connected to this device: ')
+
+    #BitBox
+    if any('VID_03EB&PID_2402' in s for s in connected_devices):
+        print(' - BitBox01 Hardware Wallet')
+
+    if any('VID_03EB&PID_2403' in s for s in connected_devices):
+        print(' BitBox02 Hardware Wallet')
+
+    #JuBiter Blade
+    if any('VID_096E&PID_0891' in s for s in connected_devices):
+        print(' - JuBiter Blade Hardware Wallet')
+    
+    #Optimum
+    if any('VID_1209&PID_AAAA' in s for s in connected_devices):
+        print(' - Optimum Hardware Wallet')
+
+    #safeWISE CoinSafe
+    if any('VID_1209&PID_ABBA' in s for s in connected_devices):
+        print(' - SafeWISE CoinSafe Hardware Wallet')
+    
 
 if __name__ == '__main__':
     main()
