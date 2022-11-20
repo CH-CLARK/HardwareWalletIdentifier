@@ -58,6 +58,13 @@ def main():
     if 'VID_1209&PID_9998' in connected_devices or 'VID_1209&PID_9999' in connected_devices:
         print(' - Opolo Hardware Wallet')
     
+    #BitLox
+    if 'VID_2341&PID_003D' in connected_devices or 'VID_2341&PID_003E' in connected_devices:
+        print(' - BitLox Hardware Wallet')
 
-if __name__ == '__main__':
-    main()
+    #Ledger
+    if 'VID_2581&PID_1807' in connected_devices or 'VID_2581&PID_1808' in connected_devices or 'VID_2581&PID_1B7C' in connected_devices or 'VID_258&PID_1B7C' in connected_devices or 'VID_2581&PID_2B7C' in connected_devices or 'VID_2581&PID_3B7C' in connected_devices or 'VID_2581&PID_4B7C' in connected_devices:
+        print(' - Ledger HW1 hardware Wallet')
+
+    if __name__ == '__main__':
+        main()
