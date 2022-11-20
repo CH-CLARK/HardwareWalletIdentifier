@@ -42,6 +42,9 @@ def main():
     if 'VID_1209&PID_53C0' in connected_devices or 'VID_1209&PID_53C1' in connected_devices:
         print(' - Trezor Hardware Wallet')
 
+    if any('VID_534C&PID_0001' in s for s in connected_devices):
+        print(" - Trezor Hardware Wallet")
+
     #Monero 
     if 'VID_1209&PID_B0B0' in connected_devices or 'VID_1209&PID_C0DA' in connected_devices or 'VID1209&PID_D00D' in connected_devices:
         print(' - Monero Hardware Wallet')
@@ -66,5 +69,25 @@ def main():
     if 'VID_2581&PID_1807' in connected_devices or 'VID_2581&PID_1808' in connected_devices or 'VID_2581&PID_1B7C' in connected_devices or 'VID_258&PID_1B7C' in connected_devices or 'VID_2581&PID_2B7C' in connected_devices or 'VID_2581&PID_3B7C' in connected_devices or 'VID_2581&PID_4B7C' in connected_devices:
         print(' - Ledger HW1 hardware Wallet')
 
-    if __name__ == '__main__':
-        main()
+    if any('VID_2581&PID_F1D1' in s for s in connected_devices):
+        print(' - Ledger HW1 or Nano S Plus Hardware Wallet')
+    
+    if any('VID_2C97' in s for s in connected_devices):
+        print(' - Ledger HW2, Ledger X, Ledger Blue or Ledger Nano S')
+
+    #KeepKey
+    if any('VID_2B24' in s for s in connected_devices):
+        print(' - KeepKey Hardware Wallet')
+    
+    #D'CENT
+    if any('VID_2F48&PID_2130' in s for s in connected_devices):
+        print(" - D'CENT Hardware Wallet")
+
+    #CoinKite
+    if any('VID_D13E&PID_CC10' in s for s in connected_devices):
+        print(" - CoinKite Hardware Wallet")
+    
+    
+
+if __name__ == '__main__':
+    main()
