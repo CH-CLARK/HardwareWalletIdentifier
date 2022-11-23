@@ -118,6 +118,7 @@ def main():
     print('This list is not exhaustive! Please confirm your own findings!')
     print('https://github.com/INTERPOL-Innovation-Centre/HardwareWallets_DF_List')
     print('')
+    input('Press any key to close.')
 
 if __name__ == '__main__':
     main()
