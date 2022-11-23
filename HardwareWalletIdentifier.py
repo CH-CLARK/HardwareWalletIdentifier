@@ -6,9 +6,11 @@ def main():
     
     connected_devices = []
     wallet_devices = []
-
+    print('+------------------------------------------------------------------------------+')
+    print('|                          Hardware Wallet Identifier                          |')
+    print('+------------------------------------------------------------------------------+')
     print('Previously connected devices:')
-    print("----------------------------------------")
+    print('--------------------------------------------------------------------------------')
     for n in range(1000):
         try:
             x = winreg.EnumKey(access_key,n)
@@ -17,8 +19,9 @@ def main():
             
         except:
             break
-    print("----------------------------------------")
-    print('The following Hardware Wallet may have been connected to this device: ')
+    print('')
+    print('--------------------------------------------------------------------------------')
+    print('The following Hardware Wallets may have been connected to this device: ')
 
     #BitBox
     if any('VID_03EB&PID_2402' in s for s in connected_devices):
@@ -55,7 +58,7 @@ def main():
     #Monero 
     if 'VID_1209&PID_B0B0' in connected_devices or 'VID_1209&PID_C0DA' in connected_devices or 'VID1209&PID_D00D' in connected_devices:
         print(' - Monero Hardware Wallet')
-        wallet_device.append('Monero')
+        wallet_devices.append('Monero')
 
     #Secalot
     if 'VID_1209&PID_7000' in connected_devices or 'VID_1209&PID_7001' in connected_devices:
@@ -70,35 +73,51 @@ def main():
     #Opolo
     if 'VID_1209&PID_9998' in connected_devices or 'VID_1209&PID_9999' in connected_devices:
         print(' - Opolo Hardware Wallet')
+        wallet_devices.append('Opolo')
     
     #BitLox
     if 'VID_2341&PID_003D' in connected_devices or 'VID_2341&PID_003E' in connected_devices:
         print(' - BitLox Hardware Wallet')
+        wallet_devices.append('BitLox')
 
     #Ledger
     if 'VID_2581&PID_1807' in connected_devices or 'VID_2581&PID_1808' in connected_devices or 'VID_2581&PID_1B7C' in connected_devices or 'VID_258&PID_1B7C' in connected_devices or 'VID_2581&PID_2B7C' in connected_devices or 'VID_2581&PID_3B7C' in connected_devices or 'VID_2581&PID_4B7C' in connected_devices:
         print(' - Ledger HW1 hardware Wallet')
+        wallet_devices.append('Ledger_1')
 
     if any('VID_2581&PID_F1D1' in s for s in connected_devices):
         print(' - Ledger HW1 or Nano S Plus Hardware Wallet')
+        wallet_devices.append('Ledger_2')
     
     if any('VID_2C97' in s for s in connected_devices):
         print(' - Ledger HW2, Ledger X, Ledger Blue or Ledger Nano S')
+        wallet_devices.append('Ledger 3')
 
     #KeepKey
     if any('VID_2B24' in s for s in connected_devices):
         print(' - KeepKey Hardware Wallet')
+        wallet_devices.append('KeepKey')
     
     #D'CENT
     if any('VID_2F48&PID_2130' in s for s in connected_devices):
         print(" - D'CENT Hardware Wallet")
+        wallet_devices.append("D'CENT")
 
     #CoinKite
     if any('VID_D13E&PID_CC10' in s for s in connected_devices):
         print(" - CoinKite Hardware Wallet")
+        wallet_devices.append('CoinKite')
     
-    else:
-        print("NULL")
+    if not wallet_devices:
+        print("No Hardware Wallets have been identified!")
+        print("")
+    if wallet_devices:
+        print("")
+
+    print('--------------------------------------------------------------------------------')
+    print('This list is not exhaustive! Please confirm your own findings!')
+    print('https://github.com/INTERPOL-Innovation-Centre/HardwareWallets_DF_List')
+    print('')
 
 if __name__ == '__main__':
     main()
