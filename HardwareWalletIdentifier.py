@@ -5,6 +5,7 @@ def main():
     access_key = winreg.OpenKey(access_registry,r'SYSTEM\ControlSet001\Enum\USB')
     
     connected_devices = []
+    wallet_devices = []
 
     print('Previously connected devices:')
     print("----------------------------------------")
@@ -22,22 +23,25 @@ def main():
     #BitBox
     if any('VID_03EB&PID_2402' in s for s in connected_devices):
         print(' - BitBox01 Hardware Wallet')
+        wallet_devices.append('Bitbox_1')
 
     if any('VID_03EB&PID_2403' in s for s in connected_devices):
         print(' BitBox02 Hardware Wallet')
+        wallet_devices.append('Bitbox_2')
 
     #JuBiter Blade
     if any('VID_096E&PID_0891' in s for s in connected_devices):
         print(' - JuBiter Blade Hardware Wallet')
-    
+        wallet_devices.append('JuBiter_Blade')
     #Optimum
     if any('VID_1209&PID_AAAA' in s for s in connected_devices):
         print(' - Optimum Hardware Wallet')
+        wallet_devices.append('Optimum')
 
     #SafeWISE CoinSafe
     if any('VID_1209&PID_ABBA' in s for s in connected_devices):
         print(' - SafeWISE CoinSafe Hardware Wallet')
-    
+        wallet_devices.append('SafeWISE')
     #Trezor
     if 'VID_1209&PID_53C0' in connected_devices or 'VID_1209&PID_53C1' in connected_devices:
         print(' - Trezor Hardware Wallet')
