@@ -87,7 +87,8 @@ def main():
     if any('VID_D13E&PID_CC10' in s for s in connected_devices):
         print(" - CoinKite Hardware Wallet")
     
-    
+    else:
+        print("NULL")
 
 if __name__ == '__main__':
     main()
