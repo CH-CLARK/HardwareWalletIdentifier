@@ -42,24 +42,30 @@ def main():
     if any('VID_1209&PID_ABBA' in s for s in connected_devices):
         print(' - SafeWISE CoinSafe Hardware Wallet')
         wallet_devices.append('SafeWISE')
+
     #Trezor
     if 'VID_1209&PID_53C0' in connected_devices or 'VID_1209&PID_53C1' in connected_devices:
         print(' - Trezor Hardware Wallet')
+        wallet_devices.append('Trezor_1')
 
     if any('VID_534C&PID_0001' in s for s in connected_devices):
         print(" - Trezor Hardware Wallet")
+        wallet_devices.append('Trezor_2')
 
     #Monero 
     if 'VID_1209&PID_B0B0' in connected_devices or 'VID_1209&PID_C0DA' in connected_devices or 'VID1209&PID_D00D' in connected_devices:
         print(' - Monero Hardware Wallet')
+        wallet_device.append('Monero')
 
     #Secalot
     if 'VID_1209&PID_7000' in connected_devices or 'VID_1209&PID_7001' in connected_devices:
         print(' - Secalot Hardware Wallet')
+        wallet_devices.append('Secalot')
 
     #OpenDime
     if any('VID_1209&PID_7551' in s for s in connected_devices):
         print(' - OpenDime Hardware Wallet')
+        wallet_devices.append('OpenDime')
 
     #Opolo
     if 'VID_1209&PID_9998' in connected_devices or 'VID_1209&PID_9999' in connected_devices:
