@@ -5,4 +5,4 @@
 
 https://github.com/INTERPOL-Innovation-Centre/HardwareWallets_DF_List
 
-Run the script within the command line on the operating system that you want to identify previously connected hardware wallets.
+Run the script within the command line on the operating system that you want to identify previously connected Hardware Wallets.
