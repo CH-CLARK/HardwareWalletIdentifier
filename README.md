@@ -1,3 +1,5 @@
+This repository has been archived! The functionality of this repository has been incorporated into WalletSleuth.
+
 # HardwareWalletIdentifier
 Identify previously connected Cryptocurrency Hardware Wallets on the Windows Operating System.
 
